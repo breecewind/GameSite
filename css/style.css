@@ -79,14 +79,6 @@ html {
 .wrapper .sidebar ul li:hover a {
   color: black;
 }
- 
-.wrapper .sidebar .social_media {
-  position: absolute;
-  bottom: 25px;
-  left: 48%;
-  transform: translateX(-50%);
-  display: flex;
-}
 
 .wrapper .main_content {
   width: 100%;
