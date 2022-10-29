@@ -113,12 +113,12 @@ html {
 .alert {
   
   padding: 20px;
-  background-color: rgb(3,3,3);
+  background-color: rgb(54,57,62);
   backdrop-filter: blur(2.5px);
   color: white;
   margin-bottom: 15px;
   text-align: center;
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Barlow', Barlow; 
 }
 
 .alert.controls {
@@ -173,7 +173,7 @@ html {
 }
 
 h1 {
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Barlow', Barlow; 
   font-size: 65px;
   font-weight: 400;
   top: 250px;
@@ -192,7 +192,7 @@ h1 {
 }
 
 #navbar {
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Barlow', Barlow; 
   list-style-type: none;
   margin:	0;
   padding: 0;
