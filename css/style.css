@@ -9,11 +9,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #FFFFFF; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(88, 88, 88); 
+  background: rgb(255, 255, 255); 
 }
 
 ::-webkit-scrollbar-thumb:active {
