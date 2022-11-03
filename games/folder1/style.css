@@ -1,0 +1,318 @@
+html {
+    height: 100%;
+}
+body {
+    background: #202020;
+    margin: 0;
+    height: 100%;
+    
+    font-family: Consolas;
+    color: #ffffff;
+    overflow: hidden;
+}
+body, .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+button:focus {
+    outline: none;
+}
+.hidden {
+    display: none !important;
+}
+.shake {
+    animation: shake 0.1s linear;
+}
+@keyframes shake {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    10% {
+        transform: translate(5px, 0px);
+    }
+    20% {
+        transform: translate(-5px, 0px);
+    }
+    30% {
+        transform: translate(5px, 0px);
+    }
+    40% {
+        transform: translate(-5px, 0px);
+    }
+    50% {
+        transform: translate(5px, 0px);
+    }
+    60% {
+        transform: translate(-5px, 0px);
+    }
+    70% {
+        transform: translate(5px, 0px);
+    }
+    80% {
+        transform: translate(-5px, 0px);
+    }
+    90% {
+        transform: translate(5px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+#logo {
+    position: relative;
+    user-select: none;
+}
+#logo h1 {
+    font-size: 100px;
+    line-height: 100px;
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
+}
+#logo h1 span {
+    color: #f06529;
+}
+#logo img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    image-rendering: pixelated;
+    margin-right: 10px;
+}
+#logo small {
+    display: block;
+    width: calc(100% + 10px);
+    text-align: right;
+}
+#splash {
+    position: absolute;
+    color: #f0c000;
+    text-shadow: 2px 2px #202020;
+    right: 10px;
+    bottom: 10px;
+    transform: translate(50%, 50%) rotate(-15deg) scale(1);
+    animation: 1s ease-in-out 0s infinite forwards splash;
+}
+@keyframes splash {
+    0% {
+        transform: translate(50%, 50%) rotate(-15deg) scale(1);
+    }
+    50% {
+        transform: translate(50%, 50%) rotate(-15deg) scale(1.2);
+    }
+    100% {
+        transform: translate(50%, 50%) rotate(-15deg) scale(1);
+    }
+}
+
+.button {
+    --border: #ffffff;
+    --shadow: #808080;
+    --width: 150px;
+    --height: 60px;
+    --x: 0px;
+    --y: 0px;
+    border: 5px solid var(--border);
+    background: transparent;
+    font: 20px Consolas;
+    color: var(--border);
+    width: var(--width);
+    height: var(--height);
+    top: var(--y);
+    left: var(--x);
+    cursor: pointer;
+    position: relative;
+    transition: 0.1s;
+    padding: 0;
+}
+.button:hover {
+    top: calc(var(--y) - 2.5px);
+    left: calc(var(--x) - 2.5px);
+}
+.button > * {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: 0.1s;
+}
+.button:hover > * {
+    top: 2.5px;
+    left: 2.5px;
+}
+.button::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--shadow);
+    position: absolute;
+    top: -2.5px;
+    left: -2.5px;
+    z-index: -2;
+    transition: 0.1s;
+}
+.button:hover::before {
+    top: 2.5px;
+    left: 2.5px;
+}
+.button::after {
+    content: '';
+    z-index: -1;
+    display: block;
+    position: absolute;
+    background: var(--border);
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 
+        var(--border) calc(var(--width) - 10px) 0,
+        var(--border) 0 calc(var(--height) - 10px),
+        var(--border) calc(var(--width) - 10px) calc(var(--height) - 10px);
+}
+
+.input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    font: 20px Consolas;
+    color: #ffffff;
+    padding-left: 5px;
+}
+.input:focus {
+    outline: none;
+}
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+#width, #height {
+    width: 50px;
+    text-align: center;
+}
+
+#gui {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    user-select: none;
+}
+#play {
+    position: absolute;
+    --width: 100px;
+    --height: 100px;
+    --x: 20px;
+    --y: calc(100% - 120px);
+    image-rendering: pixelated;
+}
+#play[title=Play] #pauseImg {
+    display: none;
+}
+#play[title=Pause] #playImg {
+    display: none;
+}
+#tick {
+    position: absolute;
+    --width: 100px;
+    --height: 100px;
+    --x: 130px;
+    --y: calc(100% - 120px);
+    image-rendering: pixelated;
+}
+
+#hotbar {
+    --rotate: 0;
+    --angle: calc(var(--rotate) * -90deg);
+    position: absolute;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0px 5px;
+    width: calc(100% - 270px);
+    max-width: fit-content;
+    right: max(20px, max(100% - 1230px, 40px) / 2);
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    -webkit-mask-image: linear-gradient(to right, transparent, #ffffff max(0px, 50px - 5%), #ffffff min(100%, 105% - 50px), transparent);
+    mask-image: linear-gradient(to right, transparent, #ffffff max(0px, 50px - 5%), #ffffff min(100%, 105% - 50px), transparent);
+}
+#hotbar::-webkit-scrollbar {
+    position: absolute;
+    bottom: 0;
+    height: 6px;
+    background: #404040;
+}
+#hotbar::-webkit-scrollbar-thumb {
+    background: #808080;
+    border-radius: 3px;
+}
+
+.slot {
+    width: 75px;
+    height: 75px;
+    margin: 12.5px;
+    flex: none;
+    image-rendering: pixelated;
+    background-size: 100%;
+    background-image: url("./images/unknown.png");
+    cursor: pointer;
+    transform: rotate(var(--angle));
+    transition: 0.2s;
+}
+.slot.selected, .slot:hover {
+    transform: rotate(var(--angle)) scale(1.1);
+}
+
+#vignette {
+    position: absolute;
+    width: 100%;
+    height: 190px;
+    bottom: 0;
+    z-index: -2;
+    background: linear-gradient(to bottom, #00000000, #00000040 50px, #00000040 100%);
+}
+
+#cells {
+    --width: 10;
+    --height: 10;
+    --size: 50px;
+    --time: 200ms;
+
+    position: absolute;
+    width: calc(var(--width) * var(--size));
+    height: calc(var(--height) * var(--size));
+
+    image-rendering: pixelated;
+    background: url("./images/bg.png") repeat 0px 0px/var(--size);
+
+    user-select: none;
+}
+
+.cell {
+    position: absolute;
+
+    left: calc(var(--size) / -2);
+    top: calc(var(--size) / -2);
+    width: var(--size);
+    height: var(--size);
+    
+    transform: translate(50%, 50%);
+    transition: transform var(--time) linear;
+    
+    background: url("./images/unknown.png") 0px / var(--size);
+
+    text-align: center;
+    font: calc(var(--size) / 2) Consolas;
+    line-height: calc(var(--size) / 2);
+    color: white;
+    -webkit-text-stroke: 1px #808080;
+}
