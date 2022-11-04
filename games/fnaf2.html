@@ -1,32 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Play Five Nights at Freddy's 2" />
-    <meta name="keywords"
-        content="Five Nights at Freddy's 2, play Five Nights at Freddy's 2, Five Nights at Freddy's 2 game, unblocked, unblocked Five Nights at Freddy's 2, unblocked playhydra" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Five Nights at Freddy's 2 | PLAYHYDRA</title>
-    <link href="../../assets/css/style.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<style>
+  div {
+    overflow: hidden;
+    width: 300px;
+    height: 100px;
+    scrolling="no";
+  }
+  .container {
+  position: absolute;
+  overflow: hidden; /* Hide scrollbars */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  scrolling="no";
+}
+  
+
+.responsive-iframe {
+  overflow: hidden; /* Hide scrollbars */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  scrolling="no";
+}
+</style>
 </head>
-
 <body>
-    <div class="nav-container">
-        <a href="/"><img src="../../assets/images/playhydra.png" alt="PLAYHYDRA LOGO" title="PLAYHYDRA"
-                class="logo" /></a>
 
-        <nav>
-            <a href="/index.html" class="nav-item">HOME</a>
-            <a href="/about.html" class="nav-item">ABOUT</a>
-            <a href="/location.html" class="nav-item">LOCATION</a>
-        </nav>
-    </div>
-    <h1>Five Nights at Freddy's 2</h1>
-    <iframe width="900" height="640"
-        src="https://scratch.mit.edu/projects/469219637/embed/"
-        scrolling="no"></iframe>
-    <sub><em>BROUGHT TO YOU BY THE STUDENTS OF MMS</em></sub>
+
+<div class="container"> 
+  <iframe class="responsive-iframe" src="https://scratch.mit.edu/projects/469219637/embed/"></iframe>
+  <scrolling="no">
+</div>
+
 </body>
-
 </html>
